@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pinky"
@@ -12,54 +13,59 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:fontFamily="casual"
         android:text="PAPER "
         android:textColor="#981F1F"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/textView"
-        android:layout_centerHorizontal="true"
         android:fontFamily="casual"
         android:text="ROCK"
         android:textColor="#981F1F"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
-        android:layout_centerHorizontal="true"
         android:fontFamily="casual"
         android:text="SCISSOR"
         android:textColor="#981F1F"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="304dp"
         android:layout_height="135dp"
-        android:layout_above="@+id/textView2"
         android:layout_marginBottom="30dp"
-        app:srcCompat="@drawable/all"
-        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
 
-        />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/all" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="195dp"
         android:layout_height="60dp"
-        android:layout_below="@id/textView3"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:background="#DA7979"
         android:ellipsize="none"
@@ -68,36 +74,41 @@
         android:text="START "
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
 
     <Button
         android:id="@+id/button5"
-        android:visibility="invisible"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="#9E268B"
         android:fontFamily="casual"
         android:text="SINGLE PLAYER"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
 
     <Button
         android:id="@+id/button6"
-        android:visibility="invisible"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button5"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="#9E268B"
         android:fontFamily="casual"
         android:text="2 PLAYERS"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button5" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
